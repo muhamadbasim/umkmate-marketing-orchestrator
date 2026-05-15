@@ -31,9 +31,9 @@ export function buildLandingPageSections(context: BusinessContext): SectionPaylo
 
   return [
     buildHeroSection(context, priceFormatted, waLink),
+    buildProductListSection(),
     buildFeaturesSection(context),
     buildTestimonialSection(context),
-    buildProductListSection(),
     buildCtaSection(context, waLink),
   ];
 }
@@ -65,7 +65,7 @@ function buildFeaturesSection(context: BusinessContext): SectionPayload {
   return {
     type: 'text',
     name: 'Keunggulan',
-    order: 2,
+    order: 3,
     visible: true,
     htmlContent: `<div style="padding:40px 20px;max-width:800px;margin:0 auto;color:white;">
   <h2 style="text-align:center;margin-bottom:30px;font-size:1.8rem;">Kenapa ${escapeHtml(context.business_name)}?</h2>
@@ -95,7 +95,7 @@ function buildTestimonialSection(context: BusinessContext): SectionPayload {
   return {
     type: 'text',
     name: 'Testimoni',
-    order: 3,
+    order: 4,
     visible: true,
     htmlContent: `<div style="padding:40px 20px;background:#0f3460;color:white;">
   <h2 style="text-align:center;margin-bottom:30px;">Apa Kata Pelanggan</h2>
@@ -117,7 +117,7 @@ function buildProductListSection(): SectionPayload {
   return {
     type: 'product_list',
     name: 'Produk Kami',
-    order: 4,
+    order: 2,
     visible: true,
     htmlContent: '',
   };
